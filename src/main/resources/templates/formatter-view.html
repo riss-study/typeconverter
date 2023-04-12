@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formatter-View By Riss</title>
+</head>
+<body>
+
+<ul>
+
+  <li>${form.number} (컨버전 서비스 적용x): <span th:text="${form.number}"></span> </li>
+  <li>${{form.number} (컨버전 서비스 적용o): <span th:text="${{form.number}}"></span> </li>
+  <li>${form.localDateTime} (컨버전 서비스 적용x): <span th:text="${form.localDateTime}"></span> </li>
+  <li>${{form.localDateTime} (컨버전 서비스 적용o): <span th:text="${{form.localDateTime}}"></span> </li>
+
+</ul>
+
+</body>
+</html>

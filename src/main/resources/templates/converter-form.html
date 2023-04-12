@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter-Form By Riss</title>
+</head>
+<body>
+
+<form th:object="${form}" th:method="post">
+  th:field <input type="text" th:field="*{ipPort}" />
+  <!--/* th:field 의 또 다른 기능(id, name 출력 등 다양한 기능): 컨버터(IpPortToStringConverter)까지 자동으로 적용해줌 */-->
+  th:value <input type="text" th:value="*{ipPort}" />(보여주기 용도)</br>
+  <!--/* 컨버터 적용하기 싫으면 th:value 에 넣어주면 됨 */-->
+  <input type="submit" />
+  <!--/* submit => "127.0.0.1:8080" 이라는 String 이 제출됨
+  => @PostMapping 에 있는 form 이 @ModelAttribute 이므로 IpPortToStringConverter 가 자동으로 호출되어 form 변수에 매핑해줌 */-->
+</form>
+
+</body>
+</html>

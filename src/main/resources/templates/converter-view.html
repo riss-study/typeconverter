@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter-View By Riss</title>
+</head>
+<body>
+<ul>
+  <!--/* 타임리프는 text 를 출력해야함 ${...}=> 변수 표현식, ${{...}}=> 컨버전 서비스(스프링이 제공하는 컨버전 서비스 사용) 적용 후 변환된 결과 출력 */-->
+  <li>${number}: <span th:text="${number}"></span></li> <!--/* {} 하나 => 컨버터 적용 x => 그냥 숫자 10000 객체.toString() */-->
+  <li>${{number}}: <span th:text="${{number}}"></span></li> <!--/* {} 두개 => 컨버터 적용 o => convert String (IntegerToStringConverter or MyNumberFormatter). 문자->숫자는 타임리프가 자동 변환해주므로 컨버터 적용 안될 때도 있음 */-->
+  <li>${ipPort}: <span th:text="${ipPort}"></span></li> <!--/* 그냥 객체.toString() 이 출력 */-->
+  <li>${{ipPort}}: <span th:text="${{ipPort}}"></span></li> <!--/* 컨버터 적용 => convert String (IpPortToStringConverter) */-->
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formatter-Form By Riss</title>
+</head>
+<body>
+
+<form th:object="${form}" th:method="post" th:action>
+
+  number(field=>컨버전서비스 적용x) <input type="text" th:field="*{number}" /><br />
+  number(value=>컨버전서비스 적용o) <input readonly type="text" th:value="*{number}" /><br />
+  localDateTime(field=>컨버전서비스 적용x) <input type="text" th:field="*{localDateTime}" /> <br/>
+  localDateTime(value=>컨버전서비스 적용o) <input readonly type="text" th:value="*{localDateTime}" /> <br/>
+  <input type="submit" />
+
+</form>
+
+</body>
+</html>
